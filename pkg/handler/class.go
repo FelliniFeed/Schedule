@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type getAllListsResponse struct {
+type getAllClassesResponse struct {
 	Data []models.Class `json:"data"`
 }
 
@@ -19,7 +19,7 @@ func (h *Handler) getClasses(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, getAllListsResponse{
+	c.JSON(http.StatusOK, getAllClassesResponse{
 		Data: class,
 	})
 }
@@ -32,7 +32,7 @@ func (h *Handler) createClass(c *gin.Context) {
 		return
 	}
 
-	id, err := h.service.Class.CreateClass(class )
+	id, err := h.service.Class.CreateClass(class)
 	if err !=nil {
 		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
 		return

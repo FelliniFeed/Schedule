@@ -23,5 +23,11 @@ func (h *Handler) InitRoutes() *gin.Engine{
 		class.POST("/", h.createClass)
 	}
 
+	student := router.Group("/student")
+	{
+		student.GET("/", h.getStudents)
+		student.POST("/", h.createStudent)
+	}
+
 	return router
 }

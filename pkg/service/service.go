@@ -12,7 +12,10 @@ type Class interface {
 	CreateClass(class models.Class) (uuid.UUID, error)
 }
 type StudentInClass interface{}
-type Student interface{}
+type Student interface{
+	GetStudents() ([]models.Student, error)
+	CreateStudent(student models.Student) (uuid.UUID, error)
+}
 type Schedule interface{}
 type Timepair interface{}
 type Teacher interface{}

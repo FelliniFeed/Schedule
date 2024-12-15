@@ -6,6 +6,6 @@ type SubjectPostgres struct {
 	db *sqlx.DB
 }
 
-func NewSubjectPostgres(db *sqlx.DB) *SchedulePostgres {
-	return &SchedulePostgres{db:*db}
+func NewSubjectPostgres(db *sqlx.DB) *SubjectPostgres {
+	return &SubjectPostgres{db: db}
 }
