@@ -11,7 +11,10 @@ type Class interface{
 	GetClasses() ([]models.Class, error)
 	CreateClass(class models.Class) (uuid.UUID, error)
 }
-type StudentInClass interface{}
+type StudentInClass interface{
+	GetStudentInClass(studentId, classId string) ([]models.StudentInClass, error)
+	CreateStudentInClass(studentInClass models.StudentInClass) (uuid.UUID, error)
+}
 type Student interface{
 	GetStudents() ([]models.Student, error)
 	CreateStudent(student models.Student) (uuid.UUID, error)
